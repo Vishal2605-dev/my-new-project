@@ -4,71 +4,97 @@ Final project for the Building AI course
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+This project uses a neural network to classify whether an animal is a cat or a dog based on physical features like height, weight, and body length. It’s a lightweight, interpretable model built for quick deployment and educational purposes.
 
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
+This project addresses the challenge of quick and automated animal identification, particularly in pet shelters or vet clinics. With limited resources and time, staff often need a fast way to catalog animals. AI can help streamline this process.
 
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+* Misclassification of animals in shelters
+
+* Time-consuming manual input and decision-making
+
+* Lack of accessible tech for smaller clinics or rural shelters
+
+My motivation is to demonstrate how even simple models can solve real-world classification problems effectively, and to practice using neural networks in applied settings.
 
 
 ## How is it used?
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+The model takes three numeric inputs: height, weight, and length of the animal. These are fed into a trained neural network which outputs a probability between 0 and 1. If the value is above 0.5, it's classified as a dog; otherwise, as a cat.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+This solution is ideal for:
 
-If you need to resize images, you have to use an HTML tag, like this:
+* Animal shelters and clinics
+
+* Mobile animal rescue units
+
+* Educational tools for learning about neural networks
+
+Users can input values through a simple web or command-line interface. Care should be taken to calibrate measurements properly to ensure accurate predictions.
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
-
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
-
-   totPop = sum(pop)
-   totFish = sum(fishers)
-
-   # write your solution here
-
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
 ```
 
 
 ## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
+The dataset used is a synthetic collection representing physical measurements of cats and dogs, or optionally a public dataset such as the Kaggle Dogs vs Cats dataset.
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+Data Attribute	Description
+Height	In centimeters
+Weight	In kilograms
+Length	From nose to tail tip
+
+AI Methods:
+
+* Feedforward neural network
+
+* Sigmoid activation for output
+
+* Identity or ReLU in hidden layers
+
+* Trained using supervised learning and binary cross-entropy loss
 
 ## Challenges
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+This model does not handle:
+
+* Mixed-breed animals or unusual measurements
+
+* Image-based identification (this model is numeric only)
+
+* Real-world noise or outliers in input
+
+Ethical considerations:
+
+* Ensure predictions aren't used for medical decisions
+
+* Avoid bias by ensuring the dataset is representative
 
 ## What next?
 
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
+The next steps could include:
+
+* Expanding the model to accept image inputs via CNNs
+
+* Adding more animal classes (e.g. rabbit, fox)
+
+* Integrating into a mobile app with camera + manual input options
+
+Support needed:
+
+* More varied training data
+
+* UI/UX design help for end-user tools
+
+* Guidance on deploying lightweight AI to edge devices
 
 
 ## Acknowledgments
 
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
+* Based on concepts learned from the Building AI course by University of Helsinki
+
+* Image: Sleeping Cat on Her Back by Umberto Salvagnin / CC BY 2.0
+
+* Thanks to open datasets and educational materials that made this project possible
